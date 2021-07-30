@@ -1,0 +1,6 @@
+<h1>This is the index page</h1>
+<ul>
+<% @subs.each do |sub| %>
+<li><%= sub.title %><br><%= sub.description%><br><%="by #{ (User.find_by(id: sub.moderator_id)).username}"%></li>
+<% end %>
+</ul>

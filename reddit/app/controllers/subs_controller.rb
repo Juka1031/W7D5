@@ -1,6 +1,7 @@
 class SubsController < ApplicationController
 
     def new
+        @sub = Sub.new
         render :new
     end
 
@@ -33,7 +34,8 @@ class SubsController < ApplicationController
         @sub = Sub.find(params[:id])
 
         if @sub.update(subs_params)
-            redirect_to sub_url(@sub)
+            
+            redirect_to subs_url
         else
             flash.now[:errors] = ["Update not successful"]
         end

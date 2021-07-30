@@ -1,0 +1,22 @@
+<h1> New posts</h1>
+
+<form action="<%=posts_url%>" method="POST">
+<input type="hidden" name="authenticity_token" value = "<%= form_authenticity_token %>">
+    
+      <label>Title 
+        <input type="string" name="post[title]" value="<%=@post.title%>">
+    </label> 
+    <label>URL
+    <input type="text" name="post[url]" value="<%=@post.url%>">
+    </label>
+    <label>Content
+    <input type="text" name="post[content]" value="<%=@post.content%>">
+    </label>
+    <label>Sub ID
+    <input type="text" name="post[sub_id]" value="<%=@post.sub_id%>">
+    </label>
+    <label>Author
+    <input type="text" name="post[author_id]" value="<%=@post.author_id%>">
+    </label>
+    <button>Submit</button>
+</form>
